@@ -20,7 +20,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:id="@+id/loginPageLogo" android:layout_weight="0"
-                    app:srcCompat="@drawable/logo" android:layout_marginTop="50dp"/>
+                    app:srcCompat="@drawable/logo" android:layout_marginTop="100dp"/>
             <TextView
                     android:text="@string/app_name"
                     android:layout_width="match_parent"
@@ -35,7 +35,7 @@
                     android:layout_marginBottom="5dp"/>
             <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
                     android:inputType="textPersonName"
                     android:ems="10"
                     android:id="@+id/userNameEntry" android:hint="@string/user_name"
@@ -43,7 +43,7 @@
                     android:layout_weight="0" android:layout_marginTop="40dp"/>
             <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
                     android:inputType="textPassword"
                     android:ems="10"
                     android:id="@+id/passwordEntry" android:textColor="@color/entry_text_color"
