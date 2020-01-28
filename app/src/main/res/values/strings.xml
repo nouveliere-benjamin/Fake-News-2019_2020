@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SafeTweet</string>
+    <string name="login">Login</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="Notice">Click here for notice</string>
+    <string name="forgot_password">
+        <u>Forgot password?</u>
+    </string>
+    <string name="who">
+        <u>Who are we?</u>
+    </string>
+</resources>
