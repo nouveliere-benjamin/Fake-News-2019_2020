@@ -14,31 +14,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
-                    android:text="@string/app_name"
-                    android:layout_width="150dp"
-                    android:layout_height="match_parent" android:id="@+id/textView3" android:layout_weight="1"
-                    android:gravity="center_horizontal"/>
+                    android:text="SafeTweet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_weight="1"/>
             <TextView
                     android:text="ACCUEIL"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:layout_weight="1"
-                    android:gravity="center_horizontal" android:id="@+id/homeTextView"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textView4" android:layout_weight="1"/>
         </LinearLayout>
-        <!--        <ListView-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="match_parent"-->
-        <!--                android:id="@+id/listView"/>-->
-        <!--    utilisée pour afficher les tweets-->
         <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:id="@+id/scrollView">
+                android:layout_height="match_parent">
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                          android:orientation="vertical" android:id="@+id/tweetLayout">
-                <Button
-                        android:text="CHARGER PLUS"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/loadMoreBtn"/>
-            </LinearLayout>
+                          android:orientation="vertical" android:id="@+id/tweetLayout"/>
         </ScrollView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
