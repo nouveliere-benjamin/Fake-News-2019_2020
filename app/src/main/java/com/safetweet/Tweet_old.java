@@ -1,11 +1,11 @@
 package com.safetweet;
 
-public class Tweet {
+public class Tweet_old {
 	private String userName;
 	private String content;
 	
 	
-	public Tweet(String userName, String content) {
+	public Tweet_old(String userName, String content) {
 		this.userName = userName;
 		this.content = content;
 	}
