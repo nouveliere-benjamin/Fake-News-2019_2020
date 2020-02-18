@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:twittersdk="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".LoginPageActivity">
@@ -15,24 +14,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
-                    android:text="SafeTweet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_weight="1"/>
+                    android:text="@string/app_name"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent" android:id="@+id/textView3" android:layout_weight="1"
+                    android:gravity="center_horizontal"/>
             <TextView
                     android:text="ACCUEIL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView4" android:layout_weight="1"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:gravity="center_horizontal" android:id="@+id/homeTextView"/>
         </LinearLayout>
+        <!--        <ListView-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:id="@+id/listView"/>-->
+        <!--    utilisée pour afficher les tweets-->
         <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent" android:id="@+id/scrollView">
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                           android:orientation="vertical" android:id="@+id/tweetLayout">
-                <com.twitter.sdk.android.tweetui.TweetView
-                        android:id="@+id/bike_tweet"
+                <Button
+                        android:text="CHARGER PLUS"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        twittersdk:tw__tweet_id="510908133917487104"/>
+                        android:layout_height="wrap_content" android:id="@+id/loadMoreBtn"/>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

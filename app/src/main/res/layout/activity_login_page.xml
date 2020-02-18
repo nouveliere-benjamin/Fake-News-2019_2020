@@ -34,7 +34,7 @@
                     android:textColor="#FFFF00" android:textAlignment="center" android:clickable="true"
                     android:layout_marginBottom="5dp"/>
             <com.twitter.sdk.android.core.identity.TwitterLoginButton
-                    android:id="@+id/twitter_login_button"
+                    android:id="@+id/twitterLoginButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
