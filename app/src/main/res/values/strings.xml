@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SafeTweet</string>
+    <string name="login">Connexion</string>
+    <string name="user_name">Nom d\'utilisateur</string>
+    <string name="password">Mot de passe</string>
+    <string name="Notice">Pourquoi SafeTweet ?</string>
+    <string name="forgot_password">
+        <u>Mot de passe oublié ?</u>
+    </string>
+    <string name="who">
+        <u>Qui sommes-nous ?</u>
+    </string>
+    <string name="title_activity_main_page">MainPageActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">d8d9hWWZMy5oDJfqIswHghWJt</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">JQ4azfeOzNrASbEd0YmRVatzSQAjL26nvKRfyBelDOcIL8m19T</string>
+</resources>
