@@ -1,23 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".AboutPageActivity" android:background="@color/bg_color">
-
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".AboutPageActivity">
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" tools:layout_editor_absoluteY="247dp"
-            tools:layout_editor_absoluteX="135dp">
+            android:layout_height="match_parent">
         <TextView
-                android:text="TextView"
+                android:text="@string/notice"
+                android:textColor="@color/text_color" android:textSize="40sp" android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:gravity="center"
+                android:background="@color/bg_color_lighter"/>
+        <View android:layout_width="match_parent"
+              android:layout_height="1dp" android:background="#DDDDDD"
+              android:id="@+id/view" android:layout_marginBottom="10dp"/>
+        <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView" android:textColor="@color/text_color"/>
-        <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView2" android:textColor="@color/text_color"/>
+                android:layout_height="match_parent">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="vertical">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/icon_signification" android:textColor="@color/text_color"
+                          android:textSize="24sp" android:layout_marginBottom="5dp"
+                          android:textStyle="italic" android:textAllCaps="false"/>
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp" android:background="#DDDDDD"
+                      android:layout_marginBottom="10dp"/>
+                <LinearLayout style="@style/AboutPage_linearLayout">
+                    <ImageView
+                            app:srcCompat="@drawable/icon_valide"
+                            android:contentDescription="@string/safe_icon_desc" style="@style/AboutPage_icons"/>
+                    <TextView android:text="@string/safe_icon_signif" style="@style/AboutPage_Significations"/>
+                </LinearLayout>
+                <LinearLayout style="@style/AboutPage_linearLayout">
+                    <ImageView
+                            app:srcCompat="@drawable/icon_exclamation_mark"
+                            android:contentDescription="@string/excl_icon_desc" style="@style/AboutPage_icons"/>
+                    <TextView android:text="@string/excl_icon_signif" style="@style/AboutPage_Significations"/>
+                </LinearLayout>
+                <LinearLayout style="@style/AboutPage_linearLayout">
+                    <ImageView
+                            app:srcCompat="@drawable/icon_hand_sign"
+                            android:contentDescription="@string/hand_icon_desc" style="@style/AboutPage_icons"/>
+                    <TextView android:text="@string/hand_icon_signif" style="@style/AboutPage_Significations"/>
+                </LinearLayout>
+                <LinearLayout style="@style/AboutPage_linearLayout">
+                    <ImageView
+                               app:srcCompat="@drawable/logo"
+                               android:contentDescription="@string/param_icon_desc" style="@style/AboutPage_icons"/>
+                    <TextView android:text="@string/param_icon_sign" style="@style/AboutPage_Significations"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

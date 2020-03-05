@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="bg_color">#2A2A2A</color>
+    <color name="bg_color_lighter">#575757</color>
     <color name="text_color">#FFFFFF</color>
     <color name="entry_bg_Color">#FFFFFF</color>
     <color name="entry_text_color">#000000</color>

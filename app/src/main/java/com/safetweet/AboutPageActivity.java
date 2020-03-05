@@ -14,10 +14,4 @@ public class AboutPageActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about_page);
 	}
-	
-	@Override
-	public void onBackPressed() {
-		Intent newActivity = new Intent(this, LoginPageActivity.class);
-		startActivity(newActivity);
-	}
 }
