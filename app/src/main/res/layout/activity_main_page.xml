@@ -29,10 +29,16 @@
                 android:layout_height="match_parent" android:id="@+id/scrollView">
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                           android:orientation="vertical" android:id="@+id/tweetLayout">
-                <Button
-                        android:text="CHARGER PLUS"
+                <ProgressBar
+                        style="?android:attr/progressBarStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/loadMoreBtn"/>
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressBar" android:indeterminate="true" android:visibility="visible"/>
+                <Button
+                        android:text="@string/load_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/loadMoreBtn" android:textAllCaps="true"
+                />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
