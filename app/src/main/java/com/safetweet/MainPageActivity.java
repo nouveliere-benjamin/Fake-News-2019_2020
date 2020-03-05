@@ -63,30 +63,6 @@ public class MainPageActivity extends AppCompatActivity {
 				Toast.makeText(MainPageActivity.this, "Load pas ok", Toast.LENGTH_LONG).show();
 			}
 		});
-
-
-//		Affichage des tweets d'un compte donné (ici forbes)
-//		UserTimeline userTimeline = new UserTimeline.Builder().screenName("forbes").build();
-//		TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(this)
-//				.setTimeline(userTimeline)
-//				.build();
-//		listView.setAdapter(adapter);
-
-
-//      Affichage de tweets connaissant leurs ids
-//		List<Long> tweetIds = Arrays.asList(1229779625934454784L, 1229779874484752384L);
-//		TweetUtils.loadTweets(tweetIds, new Callback<List<Tweet>>() {
-//			@Override
-//			public void success(Result<List<Tweet>> result) {
-//				for(Tweet tweet : result.data)
-//					layout.addView(new TweetView(MainPageActivity.this, tweet));
-//			}
-//
-//			@Override
-//			public void failure(TwitterException exception) {
-//				Toast.makeText(MainPageActivity.this, "Echec du chargement des tweets !", Toast.LENGTH_LONG).show();
-//			}
-//		});
 	}
 	
 	@Override
