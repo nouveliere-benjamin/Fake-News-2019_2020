@@ -1,10 +1,14 @@
 package com.safetweet;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.twitter.sdk.android.core.*;
+//import com.twitter.sdk.android.core.models.Tweet;
+import com.twitter.sdk.android.core.internal.TwitterApi;
 import com.twitter.sdk.android.core.models.Tweet;
 import com.twitter.sdk.android.tweetui.TweetView;
 import retrofit2.Call;
@@ -21,6 +25,7 @@ public class MainPageActivity extends AppCompatActivity {
 	private ScrollView scrollView = null;
 	private String userName;
 	private int maxTweetsLoad;
+	private EnumTweetEval[] filterChoice = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,7 @@ public class MainPageActivity extends AppCompatActivity {
 			loadBtn.setVisibility(View.INVISIBLE);
 			Toast.makeText(MainPageActivity.this, getResources().getText(R.string.tweets_loading_message), Toast.LENGTH_LONG).show();
 			loadTweets();
+			filterTweets(filterChoice);
 		});
 		scrollView = findViewById(R.id.scrollView);
 		acceuilText = findViewById(R.id.homeTextView);
@@ -43,10 +49,41 @@ public class MainPageActivity extends AppCompatActivity {
 			progressBar.setVisibility(View.VISIBLE);
 			Toast.makeText(MainPageActivity.this, getResources().getText(R.string.new_tweets_loading_message), Toast.LENGTH_LONG).show();
 			loadNewTweets();
+			filterTweets(filterChoice);
 		});
 		userName = getIntent().getStringExtra("username");
 		maxTweetsLoad = getResources().getInteger(R.integer.max_tweets_load);
 		loadTweets();
+		
+		//Menu déroulant de filtrage
+		Spinner spinner = findViewById(R.id.menuSpinner);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.menu_choices, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(adapter);
+		spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+				switch (i) {
+					case 0:
+						filterChoice = new EnumTweetEval[]{EnumTweetEval.WARN};
+						break;
+					case 1:
+						filterChoice = new EnumTweetEval[]{EnumTweetEval.DANGER};
+						break;
+					case 2:
+						filterChoice = new EnumTweetEval[]{EnumTweetEval.WARN, EnumTweetEval.DANGER};
+						break;
+					default:
+						filterChoice = null;
+				}
+				filterTweets(filterChoice);
+			}
+			
+			@Override
+			public void onNothingSelected(AdapterView<?> adapterView) {
+			
+			}
+		});
 	}
 	
 	/**
@@ -58,10 +95,10 @@ public class MainPageActivity extends AppCompatActivity {
 	 */
 	private void loadNewTweets() {
 		int layoutNbChild = layout.getChildCount();
-		if(nbLoadedTweets == 0) {
+		if (nbLoadedTweets == 0) {
 			return;
 		}
-		Tweet t = ((TweetView) layout.getChildAt(1)).getTweet();
+		Tweet t = (Tweet) ((TweetView) layout.getChildAt(1)).getTweet();
 		TwitterApiClient twitterApiClient = TwitterCore.getInstance().getApiClient();
 		Call<List<Tweet>> show = twitterApiClient.getStatusesService().homeTimeline(null, t.getId(), null, null, null, null, null);
 		show.enqueue(new Callback<List<Tweet>>() {
@@ -69,14 +106,15 @@ public class MainPageActivity extends AppCompatActivity {
 			public void success(Result<List<Tweet>> result) {
 				List<Tweet> tweets = new LinkedList(result.data);
 				//message si aucun nouveaux tweets a afficher
-				if(tweets.size() == 0) {
+				if (tweets.size() == 0) {
 					Toast.makeText(MainPageActivity.this, getResources().getText(R.string.no_new_tweets_loading_message), Toast.LENGTH_LONG).show();
 					return;
 				}
 				//affiche les nouveaux tweets
 				int idx = 0;
 				for (Tweet tweet : tweets) {
-					TweetView tv = new TweetView(MainPageActivity.this, tweet);
+					CustomTweet ct = new CustomTweet(tweet);
+					TweetView tv = new CustomTweetView(MainPageActivity.this, ct);
 					layout.addView(tv, idx++);
 					nbLoadedTweets++;
 				}
@@ -113,7 +151,7 @@ public class MainPageActivity extends AppCompatActivity {
 		}
 		TwitterApiClient twitterApiClient = TwitterCore.getInstance().getApiClient();
 		//charge un tweet en plus du nombre fixé car le requete retourne aussi le tweet maxId
-		Call<List<Tweet>> show = twitterApiClient.getStatusesService().homeTimeline(maxTweetsLoad+1, null, maxId, null, null, null, null);
+		Call<List<Tweet>> show = twitterApiClient.getStatusesService().homeTimeline(maxTweetsLoad + 1, null, maxId, null, null, null, null);
 		show.enqueue(new Callback<List<Tweet>>() {
 			@Override
 			public void success(Result<List<Tweet>> result) {
@@ -121,9 +159,11 @@ public class MainPageActivity extends AppCompatActivity {
 				//retire le premier tweet de la liste, apparaitra en double sinon
 				tweets.remove(0);
 				//affiche les tweets
-				int idx = layoutNbChild-1;
+				int idx = layoutNbChild - 1;
 				for (Tweet tweet : tweets) {
-					TweetView tv = new TweetView(MainPageActivity.this, tweet);
+					CustomTweet ct = new CustomTweet(tweet);
+					TweetView tv = new CustomTweetView(MainPageActivity.this, ct);
+					tv.setClickable(false);
 					layout.addView(tv, idx++);
 					nbLoadedTweets++;
 				}
@@ -141,5 +181,22 @@ public class MainPageActivity extends AppCompatActivity {
 				progressBar.setVisibility(View.GONE);
 			}
 		});
+	}
+	
+	private void filterTweets(@Nullable EnumTweetEval... evals) {
+		for(int i = 0; i < layout.getChildCount(); i++) {
+			View v = layout.getChildAt(i);
+			if(v instanceof CustomTweetView) {
+				CustomTweetView tv = (CustomTweetView)v;
+				EnumTweetEval eval = tv.getCustomTweet().getEval();
+				tv.setVisibility(View.VISIBLE);
+				if(evals != null && eval != null) {
+					for (EnumTweetEval param_eval : evals) {
+						if (eval == param_eval)
+							tv.setVisibility(View.GONE);
+					}
+				}
+			}
+		}
 	}
 }

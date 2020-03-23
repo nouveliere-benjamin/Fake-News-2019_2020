@@ -10,6 +10,7 @@
     <string name="who">
         <u>Qui sommes-nous ?</u>
     </string>
+    <string name="home">accueil</string>
     <string name="load_more">Charger plus</string>
     <string name="notice">Notice</string>
     <string name="icon_signification">Que signifient les icons ?</string>
@@ -24,9 +25,15 @@
     <string name="title_activity_main_page">MainPageActivity</string>
     <string name="action_settings">Settings</string>
     <string name="tweets_loading_message">Chargement de plus de tweets</string>
-    <string name="tweets_loading_error_message">OUPS, les tweets ne veulent pas charger :/</string>
+    <string name="tweets_loading_error_message">OUPS, les tweets ne veulent pas charger :/. Il se peut que vous avez atteint la limite de chargement...</string>
     <string name="new_tweets_loading_message">Chargement des nouveaux tweets</string>
     <string name="no_new_tweets_loading_message">Rien de nouveau :\'(</string>
+    <string-array name="menu_choices">
+        <item>Filtrer Oranges</item>
+        <item>Filtrer Rouges</item>
+        <item>Garder Verts</item>
+        <item>Tout Afficher</item>
+    </string-array>
     <string name="com.twitter.sdk.android.CONSUMER_KEY">d8d9hWWZMy5oDJfqIswHghWJt</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">JQ4azfeOzNrASbEd0YmRVatzSQAjL26nvKRfyBelDOcIL8m19T</string>
 </resources>
