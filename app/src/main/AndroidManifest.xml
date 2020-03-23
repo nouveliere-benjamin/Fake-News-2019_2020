@@ -12,11 +12,14 @@
         <activity
                 android:name=".MainPageActivity"
                 android:label="@string/title_activity_main_page"
-                android:theme="@style/NoActionBar">
+                android:theme="@style/NoActionBar"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".AboutPageActivity">
+        <activity android:name=".AboutPageActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".LoginPageActivity">
+        <activity android:name=".LoginPageActivity"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
