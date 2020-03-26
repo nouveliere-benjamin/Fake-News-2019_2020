@@ -3219,3 +3219,4 @@ int styleable tw__TweetView_tw__container_bg_color 2
 int styleable tw__TweetView_tw__primary_text_color 3
 int styleable tw__TweetView_tw__tweet_actions_enabled 4
 int styleable tw__TweetView_tw__tweet_id 5
+int xml network_security_config 0x7f130000

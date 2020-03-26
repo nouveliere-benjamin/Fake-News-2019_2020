@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/fzwks/AndroidStudioProjects/TwitterProjetFakeNews/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
+            "outputFile": "C:\\Users\\Nathan\\Documents\\appli\\Projet Harcelement git\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
             "map": [
                 {
-                    "source": "/home/fzwks/.gradle/caches/transforms-2/files-2.1/d146ac38e9e8bb2751e725609a59c12b/appcompat-1.0.2/res/values-port/values-port.xml",
+                    "source": "C:\\Users\\Nathan\\.gradle\\caches\\transforms-2\\files-2.1\\d146ac38e9e8bb2751e725609a59c12b\\appcompat-1.0.2\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

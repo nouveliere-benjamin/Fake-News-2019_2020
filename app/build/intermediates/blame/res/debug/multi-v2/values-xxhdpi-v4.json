@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/fzwks/AndroidStudioProjects/TwitterProjetFakeNews/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xxhdpi-v4/values-xxhdpi-v4.xml",
+            "outputFile": "C:\\Users\\Nathan\\Documents\\appli\\Projet Harcelement git\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xxhdpi-v4\\values-xxhdpi-v4.xml",
             "map": [
                 {
-                    "source": "/home/fzwks/.gradle/caches/transforms-2/files-2.1/fe53c36aaeed11b5053e8879a7d54d0e/twitter-core-3.1.1/res/values-xxhdpi-v4/values-xxhdpi-v4.xml",
+                    "source": "C:\\Users\\Nathan\\.gradle\\caches\\transforms-2\\files-2.1\\fe53c36aaeed11b5053e8879a7d54d0e\\twitter-core-3.1.1\\res\\values-xxhdpi-v4\\values-xxhdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/fzwks/AndroidStudioProjects/TwitterProjetFakeNews/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+            "outputFile": "C:\\Users\\Nathan\\Documents\\appli\\Projet Harcelement git\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "/home/fzwks/.gradle/caches/transforms-2/files-2.1/fd18d0e057725218fe85fc437eea95ce/tweet-composer-3.1.1/res/values-v11/values-v11.xml",
+                    "source": "C:\\Users\\Nathan\\.gradle\\caches\\transforms-2\\files-2.1\\fd18d0e057725218fe85fc437eea95ce\\tweet-composer-3.1.1\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2,10",
                         "startColumns": "4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "/home/fzwks/.gradle/caches/transforms-2/files-2.1/a8a25d6874f18d14cb6bb9b6d301f83a/jetified-tweet-ui-3.1.1/res/values-v11/values-v11.xml",
+                    "source": "C:\\Users\\Nathan\\.gradle\\caches\\transforms-2\\files-2.1\\892b4044a88190809ada99f226ea93b7\\jetified-tweet-ui-3.1.1\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
