@@ -1161,7 +1161,7 @@ int drawable icon_exclamation_mark 0x7f080068
 int drawable icon_hand_sign 0x7f080069
 int drawable icon_valide 0x7f08006a
 int drawable logo 0x7f08006b
-int drawable logovert 0x7f08006c
+int drawable logovertentier 0x7f08006c
 int drawable mtrl_snackbar_background 0x7f08006d
 int drawable mtrl_tabs_default_indicator 0x7f08006e
 int drawable navigation_empty_icon 0x7f08006f

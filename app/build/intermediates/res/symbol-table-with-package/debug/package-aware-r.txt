@@ -1162,7 +1162,7 @@ drawable icon_exclamation_mark
 drawable icon_hand_sign
 drawable icon_valide
 drawable logo
-drawable logovert
+drawable logovertentier
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon

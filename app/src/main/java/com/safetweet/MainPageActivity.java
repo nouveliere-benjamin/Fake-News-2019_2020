@@ -1,21 +1,36 @@
 package com.safetweet;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
 import android.view.View;
-import android.widget.*;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.ScrollView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import com.twitter.sdk.android.core.*;
-//import com.twitter.sdk.android.core.models.Tweet;
-import com.twitter.sdk.android.core.internal.TwitterApi;
+
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterApiClient;
+import com.twitter.sdk.android.core.TwitterCore;
+import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.models.Tweet;
 import com.twitter.sdk.android.tweetui.TweetView;
-import retrofit2.Call;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import retrofit2.Call;
+
+//import com.twitter.sdk.android.core.models.Tweet;
 
 public class MainPageActivity extends AppCompatActivity {
 	private int nbLoadedTweets = 0;
@@ -41,7 +56,14 @@ public class MainPageActivity extends AppCompatActivity {
 			loadBtn.setVisibility(View.INVISIBLE);
 			Toast.makeText(MainPageActivity.this, getResources().getText(R.string.tweets_loading_message), Toast.LENGTH_LONG).show();
 			loadTweets();
-			filterTweets(filterChoice);
+			final Handler handler = new Handler();
+			handler.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					filterTweets(filterChoice);
+				}
+			}, 1000);
+
 		});
 		scrollView = findViewById(R.id.scrollView);
 		acceuilText = findViewById(R.id.homeTextView);
@@ -50,7 +72,13 @@ public class MainPageActivity extends AppCompatActivity {
 			progressBar.setVisibility(View.VISIBLE);
 			Toast.makeText(MainPageActivity.this, getResources().getText(R.string.new_tweets_loading_message), Toast.LENGTH_LONG).show();
 			loadNewTweets();
-			filterTweets(filterChoice);
+			final Handler handler = new Handler();
+			handler.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					filterTweets(filterChoice);
+				}
+			}, 1000);
 		});
 		userName = getIntent().getStringExtra("username");
 		maxTweetsLoad = getResources().getInteger(R.integer.max_tweets_load);
@@ -67,17 +95,21 @@ public class MainPageActivity extends AppCompatActivity {
 				switch (i) {
 					case 0:
 						filterChoice = null;
+						((TextView)view).setText(null);
 						spinner.setBackgroundResource(R.drawable.logo);
 						break;
 					case 1:
 						filterChoice = new EnumTweetEval[]{EnumTweetEval.WARN, EnumTweetEval.DANGER};
-						spinner.setBackgroundResource(R.drawable.logovert);
+						((TextView)view).setText(null);
+						spinner.setBackgroundResource(R.drawable.logovertentier);
 						break;
 					default:
 						filterChoice = null;
+						((TextView)view).setText(null);
 						spinner.setBackgroundResource(R.drawable.logo);
 				}
 				filterTweets(filterChoice);
+
 			}
 			
 			@Override
@@ -193,8 +225,9 @@ public class MainPageActivity extends AppCompatActivity {
 				tv.setVisibility(View.VISIBLE);
 				if(evals != null && eval != null) {
 					for (EnumTweetEval param_eval : evals) {
-						if (eval == param_eval)
+						if (eval == param_eval) {
 							tv.setVisibility(View.GONE);
+						}
 					}
 				}
 			}

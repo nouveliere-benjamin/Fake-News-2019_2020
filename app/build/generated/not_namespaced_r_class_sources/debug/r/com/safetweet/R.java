@@ -5313,7 +5313,7 @@ public final class R {
     public static final int icon_hand_sign=0x7f080069;
     public static final int icon_valide=0x7f08006a;
     public static final int logo=0x7f08006b;
-    public static final int logovert=0x7f08006c;
+    public static final int logovertentier=0x7f08006c;
     public static final int mtrl_snackbar_background=0x7f08006d;
     public static final int mtrl_tabs_default_indicator=0x7f08006e;
     public static final int navigation_empty_icon=0x7f08006f;
