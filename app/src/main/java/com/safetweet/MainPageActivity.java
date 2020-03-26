@@ -1,5 +1,6 @@
 package com.safetweet;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -65,16 +66,16 @@ public class MainPageActivity extends AppCompatActivity {
 			public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 				switch (i) {
 					case 0:
-						filterChoice = new EnumTweetEval[]{EnumTweetEval.WARN};
+						filterChoice = null;
+						spinner.setBackgroundResource(R.drawable.logo);
 						break;
 					case 1:
-						filterChoice = new EnumTweetEval[]{EnumTweetEval.DANGER};
-						break;
-					case 2:
 						filterChoice = new EnumTweetEval[]{EnumTweetEval.WARN, EnumTweetEval.DANGER};
+						spinner.setBackgroundResource(R.drawable.logovert);
 						break;
 					default:
 						filterChoice = null;
+						spinner.setBackgroundResource(R.drawable.logo);
 				}
 				filterTweets(filterChoice);
 			}

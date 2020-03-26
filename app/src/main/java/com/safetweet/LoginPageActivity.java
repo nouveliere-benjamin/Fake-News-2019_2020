@@ -28,9 +28,7 @@ public class LoginPageActivity extends AppCompatActivity {
 			Intent newActivity = new Intent(this, AboutPageActivity.class);
 			startActivity(newActivity);
 		});
-		
-		clickableTxtWho = findViewById(R.id.loginPageWho);
-		
+
 		loginButton = findViewById(R.id.twitterLoginButton);
 		loginButton.setText("Connexion via Twitter");
 		loginButton.setCallback(new Callback<TwitterSession>() {

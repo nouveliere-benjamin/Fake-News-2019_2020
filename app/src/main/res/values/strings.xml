@@ -7,20 +7,20 @@
     <string name="forgot_password">
         <u>Mot de passe oublié ?</u>
     </string>
-    <string name="who">
-        <u>Qui sommes-nous ?</u>
+    <string name="contact">
+        Contactez-nous :\nprojetm1megabien@gmail.com
     </string>
     <string name="home">accueil</string>
     <string name="load_more">Charger plus</string>
     <string name="notice">Notice</string>
     <string name="icon_signification">Que signifient les icons ?</string>
-    <string name="safe_icon_signif">Signifie qu’un tweet ne présente aucune offense à l\'égard de l’utilisateur</string>
+    <string name="safe_icon_signif">Signifie qu’un tweet ne présente aucune offense à l\'égard de l’utilisateur.</string>
     <string name="safe_icon_desc">Icon Safe</string>
     <string name="excl_icon_signif">Signifie qu’un tweet présente potentiellement une offense à l’égard de l’utilisateur.</string>
     <string name="excl_icon_desc">Icon Méfiance</string>
-    <string name="hand_icon_signif">Signifie qu’un tweet présente une forte offense à l\'égard de l\'utilisateur</string>
+    <string name="hand_icon_signif">Signifie qu’un tweet présente une forte offense à l\'égard de l\'utilisateur.</string>
     <string name="hand_icon_desc">Icon Offence</string>
-    <string name="param_icon_sign">L\'icon de parametres permet de changer le type de tweets affichés suivant leur offense à l\'égard de l\'utilisateur</string>
+    <string name="param_icon_sign">L\'icon de parametres permet de changer le type de tweets affichés suivant leur offense à l\'égard de l\'utilisateur.</string>
     <string name="param_icon_desc">Icon Parametres</string>
     <string name="title_activity_main_page">MainPageActivity</string>
     <string name="action_settings">Settings</string>
@@ -29,10 +29,8 @@
     <string name="new_tweets_loading_message">Chargement des nouveaux tweets</string>
     <string name="no_new_tweets_loading_message">Rien de nouveau :\'(</string>
     <string-array name="menu_choices">
-        <item>Filtrer Oranges</item>
-        <item>Filtrer Rouges</item>
-        <item>Garder Verts</item>
-        <item>Tout Afficher</item>
+        <item>Tout afficher</item>
+        <item>Afficher que verts</item>
     </string-array>
     <string name="com.twitter.sdk.android.CONSUMER_KEY">d8d9hWWZMy5oDJfqIswHghWJt</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">JQ4azfeOzNrASbEd0YmRVatzSQAjL26nvKRfyBelDOcIL8m19T</string>
