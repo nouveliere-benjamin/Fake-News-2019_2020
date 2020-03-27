@@ -1,5 +1,6 @@
 package com.safetweet;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -103,6 +104,8 @@ public class MainPageActivity extends AppCompatActivity {
 						((TextView)view).setText(null);
 						spinner.setBackgroundResource(R.drawable.logovertentier);
 						break;
+					case 2:
+						finish();
 					default:
 						filterChoice = null;
 						((TextView)view).setText(null);

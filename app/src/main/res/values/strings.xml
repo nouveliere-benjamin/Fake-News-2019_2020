@@ -31,6 +31,7 @@
     <string-array name="menu_choices">
         <item>Tout afficher</item>
         <item>Afficher que verts</item>
+        <item>Se déconnecter</item>
     </string-array>
     <string name="com.twitter.sdk.android.CONSUMER_KEY">d8d9hWWZMy5oDJfqIswHghWJt</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">JQ4azfeOzNrASbEd0YmRVatzSQAjL26nvKRfyBelDOcIL8m19T</string>
