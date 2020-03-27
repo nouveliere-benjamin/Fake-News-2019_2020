@@ -35,7 +35,7 @@ public class CustomTweet {
 	}
 
 	private EnumTweetEval evalTweet(String tweet){
-		String url = "http://18.188.58.25";
+		String url = "http://18.222.213.247";
 		JSONObject jsonObject = new JSONObject();
 		try {
 			jsonObject.put("tweet", tweet);
