@@ -1,6 +1,5 @@
 package com.safetweet;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -78,8 +77,10 @@ public class MainPageActivity extends AppCompatActivity {
 				@Override
 				public void run() {
 					filterTweets(filterChoice);
+					progressBar.setVisibility(View.GONE);
 				}
 			}, 1000);
+
 		});
 		userName = getIntent().getStringExtra("username");
 		maxTweetsLoad = getResources().getInteger(R.integer.max_tweets_load);
@@ -134,7 +135,14 @@ public class MainPageActivity extends AppCompatActivity {
 		if (nbLoadedTweets == 0) {
 			return;
 		}
-		Tweet t = (Tweet) ((TweetView) layout.getChildAt(1)).getTweet();
+		Tweet t = null;
+		try{
+			t = (Tweet) ((TweetView) layout.getChildAt(1)).getTweet();
+		}catch (ClassCastException e){
+			t = (Tweet) ((TweetView) layout.getChildAt(0)).getTweet();
+		}
+
+
 		TwitterApiClient twitterApiClient = TwitterCore.getInstance().getApiClient();
 		Call<List<Tweet>> show = twitterApiClient.getStatusesService().homeTimeline(null, t.getId(), null, null, null, null, null);
 		show.enqueue(new Callback<List<Tweet>>() {
@@ -156,13 +164,13 @@ public class MainPageActivity extends AppCompatActivity {
 				}
 				updateView();
 			}
-			
+
 			@Override
 			public void failure(TwitterException exception) {
 				Toast.makeText(MainPageActivity.this, getResources().getText(R.string.tweets_loading_error_message), Toast.LENGTH_LONG).show();
 				updateView();
 			}
-			
+
 			private void updateView() {
 				progressBar.setVisibility(View.GONE);
 			}
